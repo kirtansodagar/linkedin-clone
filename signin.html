@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign IN</title>
+    <style>
+        .header {
+            display: flex
+        }
+
+        .card-layer {
+            width: 352px;
+            -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 0 auto;
+            background: var(--color-background-container, #fff);
+        }
+
+
+
+        input {
+            margin: auto;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
+            height: 52px;
+            padding: 28px 12px 6px;
+            border-radius: 4px !important;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #or {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        #or hr {
+            flex-grow: 1;
+            margin: 0 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        hr {
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+        }
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="email"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .join{
+            width: 352px;
+            
+            
+            padding: 24px;
+            border-radius: 8px;
+            margin: 0 auto;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="linkleap.png" alt="linkleap" width="50px">
+    </div>
+    <div class="card-layer">
+        <div class="header-card">
+            <h1>Sign In</h1>
+            <h3>Stay Updated on your professional World</h3>
+        </div>
+        <form id="sign-in-form">
+            <input type="email" name="email" id="email" placeholder="Email or Phone" required> <br>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <a href="release_soon.html">
+                <font size="3">Forgot your Password</font>
+            </a><br>
+            <a href="mainpage.html">
+            <input type="submit" value="Sign In"> </a><br>
+            <div id="or">
+                <hr>
+                <b>or</b>
+                <hr>
+            </div>
+        </form>
+        <p>By clicking Continue, you agree to Linkleap’s <a href="user_agreement.html">User Agreement</a>, <a href="privacy_policy.html">Privacy Policy</a>,
+            and <a href="cookie_policy.html">Cookie Policy</a>.</p>
+        <input type="submit" value="Continue with Google" id="continue-google">
+    </div>
+    <div class="join">
+        <a href="join.html">
+            <input type="submit" value="New to LinkLeap? Join Now">
+        </a>
+    </div>
+
+    <script src="signin.js"></script>
+    
+        <!-- <script>
+            <!-- document.addEventListener("DOMContentLoaded", function() {
+                const signInForm = document.getElementById("sign-in-form");
+                const continueGoogleBtn = document.getElementById("continue-google");
+            
+                signInForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    const email = document.getElementById("email").value;
+                    const password = document.getElementById("password").value;
+            
+                   
+                    if (!validateForm(email, password)) {
+                        return;
+                    }
+            
+                   
+                    const fakeEmail = "admin@gmail.com";
+                    const fakePassword = "admin1";
+            
+                    if (email === fakeEmail && password === fakePassword) {
+                       
+                        window.location.href = "mainpage1.html";
+                    } else {
+                        alert("Invalid email or password. Please try again.");
+                    }
+                });
+            
+                continueGoogleBtn.addEventListener("click", function() {
+
+                    window.location.href = "https://accounts.google.com/AccountChooser";
+                });
+            
+                function validateForm(email, password) {
+                    if (!email.trim() || !password.trim()) {
+                        alert("Please enter both email and password.");
+                        return false;
+                    }
+                    return true;
+                }
+            }); -->
+            
+        </script> -->
+
+        <script>
+            // Function to handle form submission
+        document.getElementById("sign-in-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+            // Perform form validation
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            const fakeEmail = "admin@gmail.com";
+                    const fakePassword = "admin1";
+            
+                    if (email === fakeEmail && password === fakePassword) {
+                       
+                        window.location.href = "mainpage1.html";
+                    } else {
+                        alert("Invalid email or password. Please try again.");
+                    }
+                });
+        
+
+        // Function to handle "Continue with Google" button click
+        document.getElementById("continue-google").addEventListener("click", function () {
+            // Redirect to the Google authentication page
+            // Replace the URL below with the actual Google authentication URL
+            window.location.href = "https://accounts.google.com/gsi/select?client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&auto_select=true&ux_mode=popup&ui_mode=card&context=signin&as=cTf4Rufyc1MX5OGppQw%2F8g&channel_id=21dbd3d86ae1dc1150ea20371f4447183dc6e49f10f70932554e2a01b27e5314&origin=https%3A%2F%2Fwww.linkedin.com";
+        });
+        </script>
+    
+</body>
+
+</html>
